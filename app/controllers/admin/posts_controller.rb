@@ -91,8 +91,13 @@ module Admin
     private
 
       def list_refresh
-        @pages = Page.paginate(:page => params[:page], :per_page => 10).order('name ASC')
-        return render(:file => 'admin/posts/list_refresh.js.erb')
+        if params[:show_posts] == 'true'
+          @posts = Post.where(:page_id => params[:id]).paginate(:page => params[:page], :per_page => 20).order('position DESC')
+          return render(:file => 'admin/posts/show_list_refresh.js.erb')
+        else
+          @pages = Page.paginate(:page => params[:page], :per_page => 10).order('name ASC')
+          return render(:file => 'admin/posts/list_refresh.js.erb')
+        end
       end
 
       def post_params

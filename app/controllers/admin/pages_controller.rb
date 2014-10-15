@@ -6,6 +6,12 @@ module Admin
     def index
       @pages = Page.paginate(:page => params[:page], :per_page => 10).order('position ASC')
     end
+
+
+    def show_posts
+      @posts = Post.where(:page_id => params[:id]).paginate(:page => params[:page], :per_page => 20).order('position DESC')
+      @page = Page.find(params[:id])
+    end
     
 
     def new

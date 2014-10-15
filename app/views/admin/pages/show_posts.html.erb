@@ -1,0 +1,15 @@
+<div class="module_list">
+	<div class="module_actions">
+		<h2><%= @page.name %> Posts</h2>
+		<div class="action_items">
+			<%= link_to(url_for(:controller => 'admin/posts', :action => 'new', :page_id => @page.id)) do %>
+				Add Post <span class="glyphicon glyphicon-plus"></span>
+			<% end %>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="module_partial">
+		<%= render :partial => 'admin/modules/posts', :object => @posts %>
+	</div>
+	<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>

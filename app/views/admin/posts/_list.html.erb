@@ -1,41 +1,26 @@
 <% for page in @pages %>
 	<div class="module_item well">
 		<div class="item_name">
-			<h5><%= page.name %></h5>
+			<h5><%= page.name %> Posts</h5>
 		</div>
 		<div class="module_item_actions">
 			<p>
 				<%= link_to(url_for(:controller => 'admin/posts', :action => 'new', :page_id => page.id)) do %>
-					<span class="glyphicon glyphicon-plus"></span>
+					Add Post <span class="glyphicon glyphicon-plus"></span>
 				<% end %>
 			</p>
 		</div>
 	</div>
-	<% for post in page.posts.order('position ASC') %>
-		<div class="module_item">
-			<div class="item_name">
-				<%= link_to post.title, :controller => 'admin/posts', :action => 'edit', :id => post.id, :page_id => page.id %>
-			</div>
-			<div class="module_item_actions">
-				<p>
-					<%= link_to(url_for(:controller => 'admin/posts', :action => 'publish', :post_id => post.id), :format => :js, :remote => true) do %>
-						<span class="glyphicon glyphicon-ok <%= post.published == true ? '' : 'dead' %>"></span>
-					<% end %>
-					<%= link_to :controller => 'admin/posts', :action => "edit", :id => post.id, :page_id => page.id do %>
-						<span class="glyphicon glyphicon-edit"></span>
-					<% end %>
-					<%= link_to(url_for(:controller => 'admin/posts', :action => 'destroy', :post_id => post.id), :format => :js, :remote => true, data: { confirm: 'Are you sure?' }) do %>
-						<span class="glyphicon glyphicon-trash"></span>
-					<% end %>
-					<%= link_to(url_for(:controller => 'admin/posts', :action => 'move_up', :post_id => post.id), :format => :js, :remote => true) do %>
-						<span class="glyphicon glyphicon-circle-arrow-up"></span>
-					<% end %>
-					<%= link_to(url_for(:controller => 'admin/posts', :action => 'move_down', :post_id => post.id), :format => :js, :remote => true) do %>					
-						<span class="glyphicon glyphicon-circle-arrow-down"></span>
-					<% end %>
-				</p>
-			</div>
-			<div class="clearboth"></div>
+
+	<!-- remove to controller or model -->
+	<% @posts = page.posts.order('position ASC').limit(10) %>
+	<%= render :partial => 'admin/modules/posts', :object => @posts %>
+
+	<% unless @posts.count < 10 %>
+		<div class="text-right">
+			<%= link_to "/admin/pages/#{page.id}/posts" do %>
+				<button type="button" class="btn btn-primary btn-xs see_all">See All</button>
+			<% end %>
 		</div>
 	<% end %>
 <% end %>

@@ -9,6 +9,7 @@ CmsAdmin2::Application.routes.draw do
 
   # CMS root
   get 'admin' => "admin/dashboard#index"
+  get 'admin/pages/:id/posts' => "admin/pages#show_posts"
 
   get 'users/sign_up' => "admin/admin#index"
 
