@@ -1,7 +1,7 @@
 <% for @post in @posts %>
 	<div class="module_item">
 		<div class="item_name">
-			<%= link_to @post.title, :controller => 'admin/posts', :action => 'edit', :id => @post.id %>
+			<%= link_to @post.title, :controller => 'admin/posts', :action => 'edit', :id => @post.id, :page_id => @post.page.id %>
 		</div>
 		<div class="module_item_actions">
 			<p>
@@ -12,7 +12,7 @@
 						<span class="glyphicon glyphicon-ok <%= @post.published == true ? '' : 'dead' %>"></span>
 					<% end %>
 
-					<%= link_to :controller => 'admin/posts', :action => "edit", :id => @post.id do %>
+					<%= link_to :controller => 'admin/posts', :action => "edit", :id => @post.id, :page_id => @post.page.id do %>
 						<span class="glyphicon glyphicon-edit"></span>
 					<% end %>
 
