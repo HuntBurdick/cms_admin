@@ -13,7 +13,7 @@
 	</div>
 
 	<!-- remove to controller or model -->
-	<% @posts = page.posts.order('position ASC').limit(10) %>
+	<% @posts = page.posts.limit(10).order('position ASC') %>
 	<%= render :partial => 'admin/modules/posts', :object => @posts %>
 
 	<% unless @posts.count < 10 %>
