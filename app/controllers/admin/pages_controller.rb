@@ -9,7 +9,7 @@ module Admin
 
 
     def show_posts
-      @posts = Post.where(:page_id => params[:id]).paginate(:page => params[:page], :per_page => 20).order('position DESC')
+      @posts = Post.where(:page_id => params[:id]).paginate(:page => params[:page], :per_page => 20).order('position ASC')
       @page = Page.find(params[:id])
     end
     
