@@ -19,8 +19,20 @@ $breakpoint_1230: 1230px;
 .navbar-default {
 	background: #000;
 	.nav {
-		a {
-			color:#fff !important;
+		li {
+			a {
+				color:#fff;
+				&:hover {
+					color: #ddd;
+				}
+			}
+		}
+		.dropdown-menu {
+			li {
+				a {
+					color:#333;
+				}
+			}
 		}
 	}
 }
