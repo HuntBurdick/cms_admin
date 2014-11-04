@@ -4,5 +4,5 @@
 	<%= form.input :page_id, selected: params[:page_id], collection: @pages %>
 <% end %>
 <%= form.input :title %>
-<%= form.input :body %>
+<%= form.input :body, as: :textile_editor %>
 <%= form.input :image %>

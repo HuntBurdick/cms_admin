@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require textile-editor
 //= require bootstrap-sprockets
 //= require_tree .

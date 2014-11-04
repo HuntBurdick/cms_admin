@@ -12,6 +12,7 @@ gem 'devise'
 gem 'cancan'
 gem 'acts_as_list'
 gem 'RedCloth'
+gem 'textile_editor_helper', '0.1.2'
 
 # Bootstrap
 gem 'bootstrap-datepicker-rails', '~> 1.0.0.7'
