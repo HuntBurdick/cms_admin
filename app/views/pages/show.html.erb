@@ -1,4 +1,4 @@
-<%= render :partial => "page_modules/#{@page.name.parameterize}" rescue nil %>
+<%= render :partial => "page_modules/#{@page.name.downcase.tr(' ', '_')}" rescue nil %>
 
 <div class="page-header">
   <h1><%= @page.name %><small></small></h1>
