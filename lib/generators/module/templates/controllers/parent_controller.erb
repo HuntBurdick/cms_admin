@@ -12,7 +12,7 @@ module Admin
 
 
     def index
-      @parent_items = <%= parent_model_name %>.paginate(:page => params[:page], :order => 'position ASC', :per_page => 10)
+      @parent_items = <%= parent_model_name %>.paginate(:page => params[:page], :per_page => 10).order('position ASC')
     end
     
 
@@ -96,7 +96,7 @@ module Admin
     private
 
       def list_refresh
-        @parent_items = <%= parent_model_name %>.paginate(:page => params[:page], :order => 'position ASC', :per_page => 10)
+        @parent_items = <%= parent_model_name %>.paginate(:page => params[:page], :per_page => 10).order('position ASC')
         return render(:file => 'admin/<%= parent_name %>/list_refresh.js.erb')
       end
 

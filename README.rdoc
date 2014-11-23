@@ -57,6 +57,16 @@ The default post layout is nice but it only displays the default post parameters
 
 -------------------
 
+== Generator
+
+rails generate module things
+
+
+this will create a backend CRUD interface for model Thing.
+
+
+--------------------
+
 Main Dependencies: Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id.
 
 
