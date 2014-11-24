@@ -85,8 +85,11 @@ To show a custom layout for a post create a file in "posts/show" called "_show_e
   
 -------------------
 
+== Some Things To Watch Out For
 
+Admin/front-end interaction is tied to the page title. I typically lock down page create/destroy and title edit and only allow admin users to edit the body content for pages. If you do not have special layouts tied to your pages, then this is not a concern.
 
+-------------------
 
 
 Main Dependencies: Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id.
