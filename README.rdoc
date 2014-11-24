@@ -42,14 +42,10 @@ To utilize these positions, create a partial file in the 'page_modules' view fol
 
 If custom objects are needed for your page module, then create a method in the pages controller under private with the same name as the page. When the corresponding page is loaded, so will the custom objects within this method. The home page structure is laid out as an example.
 
-<code>
-
-def home
-  set_page
-  # Resources for page modules can be set here.
-end
-
-</code>
+  def home
+    set_page
+    # Resources for page modules can be set here.
+  end
 
 
 ---------------------
