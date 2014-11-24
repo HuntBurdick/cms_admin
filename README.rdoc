@@ -1,4 +1,4 @@
-= cms_admin2
+= cms_admin
 ==========
 
 Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts and users.
@@ -15,7 +15,7 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts and users.
 
 == Introduction
 
-CMS_Admin2 is a simple approach to content management. The system revolves around Pages and Posts. Each Page can have many posts and posts.
+CMS_Admin is a simple approach to content management. The system revolves around Pages and Posts; each Page can have many Posts. You can either extend the Posts to fit your need or create custom admin modules.
 
 --------------------
 
