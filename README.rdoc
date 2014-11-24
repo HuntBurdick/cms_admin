@@ -15,11 +15,23 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts and users.
 
 == Introduction
 
-CMS_Admin2 is a simple approach to content management. The system revolves around Pages and Posts. Each Page can have many posts and posts can be anything (blog posts, products, events, etc...).
+CMS_Admin2 is a simple approach to content management. The system revolves around Pages and Posts. Each Page can have many posts and posts.
 
-== Custom Post Type
+--------------------
 
-Posts is a general term used for anything that can belong to a page. In order to post products on a 'store' page, you will have to create a partial titled '_form_for_store.html.erb' in the view/admin/posts folder. Create a migration to add the desired fields to posts and add the fields to the form partial with the Simple Form format. Now when creating or editing a product your custom form partial will be rendered in place of the default form.
+== Admin Generator
+
+  rails generate module things
+
+
+this will create a backend CRUD interface for model Thing.
+
+
+--------------------
+
+== Custom Post Form for page
+
+For a custom post form create the partial '_form_for_page_name.html.erb' in the view/admin/posts folder.
 
 
 -------------------
@@ -40,12 +52,18 @@ There are five pre-defined module positions for custom content within each page.
 
 To utilize these positions, create a partial file in the 'page_modules' view folder with the same name as the page. An example is included for the home page.
 
+----------------------
+
+== Custom Controller Resources
+
 If custom objects are needed for your page module, then create a method in the pages controller under private with the same name as the page. When the corresponding page is loaded, so will the custom objects within this method. The home page structure is laid out as an example.
 
-  def home
-    set_page
-    # Resources for page modules can be set here.
-  end
+  private
+  
+    def home
+      set_page
+      # Resources for page modules can be set here.
+    end
 
 
 ---------------------
@@ -65,16 +83,6 @@ To show a custom layout for a post create a file in "posts/show" called "_show_e
   _show_example.html.erb
   
 -------------------
-
-== Generator
-
-  rails generate module things
-
-
-this will create a backend CRUD interface for model Thing.
-
-
---------------------
 
 Main Dependencies: Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id.
 
