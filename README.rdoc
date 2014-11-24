@@ -26,17 +26,17 @@ Posts is a general term used for anything that can belong to a page. In order to
 
 == Custom Page Modules
 
-There are five pre-defined module positions within each page.
+There are five pre-defined module positions for custom content within each page.
 
-page_top
+  page_top
 
-page_bottom
+  page_bottom
 
-after_posts
+  after_posts
 
-side_left
+  side_left
 
-side_right
+  side_right
 
 To utilize these positions, create a partial file in the 'page_modules' view folder with the same name as the page. An example is included for the home page.
 
