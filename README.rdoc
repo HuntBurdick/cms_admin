@@ -15,7 +15,7 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts and users.
 
 == Introduction
 
-CMS_Admin is a simple approach to content management. The system revolves around Pages and Posts; each Page can have many Posts. You can either extend the Posts to fit your need or create custom admin modules.
+CMS_Admin is a simple approach to content management. The system revolves around Pages and Posts; each Page can have many Posts. You can either extend the Posts to fit your need or create custom admin modules. Both the front and back end are responsive and optimized for mobile devices.
 
 --------------------
 
