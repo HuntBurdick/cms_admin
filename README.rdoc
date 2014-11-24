@@ -7,9 +7,9 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts and users.
 
 == Default Credentials
 
-User: admin@example.com
+  User: admin@example.com
 
-Pass: password
+  Pass: password
 
 -------------------
 
@@ -64,7 +64,7 @@ The default post layout is nice but it only displays the default post parameters
 
 == Generator
 
-rails generate module things
+  rails generate module things
 
 
 this will create a backend CRUD interface for model Thing.
