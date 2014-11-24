@@ -50,16 +50,20 @@ If custom objects are needed for your page module, then create a method in the p
 
 ---------------------
 
-== Custom Post List for Specific Page
+== Custom Post List for Page
 
 To customize the post list layout for a page, create a file in the "posts/list" folder with the format "_list_for_example.html.erb", where "example" would be the page name.
 
+  _list_for_example.html.erb
+
 ---------------------
 
-== Custom Post Show Layout
+== Custom Post Show Layout for Page
 
-The default post layout is nice but it only displays the default post parameters. To show a custom layout create a file in "posts/show" called "_show_example.html.erb", where "example" is the name of the parent page.
-
+To show a custom layout for a post create a file in "posts/show" called "_show_example.html.erb", where "example" is the name of the parent page.
+  
+  _show_example.html.erb
+  
 -------------------
 
 == Generator
