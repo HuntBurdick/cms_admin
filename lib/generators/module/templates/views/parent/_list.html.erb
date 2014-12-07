@@ -1,7 +1,7 @@
 <% for parent_item in @parent_items %>
 	<div class="module_item">
 		<div class="item_name">
-			<%= link_to parent_item.name, :controller => 'admin/pages', :action => 'edit', :id => parent_item.id %>
+			<%= link_to parent_item.name, :action => 'edit', :id => parent_item.id %>
 		</div>
 		<div class="module_item_actions">
 			<p>

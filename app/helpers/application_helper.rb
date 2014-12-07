@@ -1,7 +1,11 @@
 module ApplicationHelper
 
 	def redcloth(text)
-		return raw RedCloth.new(text).to_html
+		if text.blank?
+			return nil
+		else
+			return raw RedCloth.new(text).to_html
+		end
 	end
 
 	def label_for_param(param_controller)
