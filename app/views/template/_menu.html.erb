@@ -11,9 +11,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
       	<% for page in @pages %>
-          <% unless page.only_for_logged_in_members == true && !public_user_signed_in? %>
-        	 <li><%= link_to page.name, pagelink_path(page) %></li>
-          <% end %>
+        	<li><%= link_to page.name, pagelink_path(page) %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

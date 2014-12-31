@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
 
   def menu_pages
-  	if user_signed_in?
+  	if public_user_signed_in?
 			@pages = Page.where(:show_in_menu => true, :published => true).order('position ASC')
 		else 
 			@pages = Page.where(:only_for_logged_in_members => false, :show_in_menu => true, :published => true).order('position ASC')
