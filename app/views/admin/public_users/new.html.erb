@@ -1,0 +1,8 @@
+<%= render :partial => 'admin/template/form_errors', :object => @parent_item %>
+<%= simple_form_for @parent_item, :url => url_for(:action => 'create'), :method => 'post', :html => { :role => "form" } do |form| %>
+
+	<%= render :partial => 'form', :object => form %>
+	
+	<%= submit_tag 'Submit Page', :class => 'btn btn-primary' %>
+
+<% end %>

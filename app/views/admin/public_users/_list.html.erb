@@ -1,0 +1,18 @@
+<% for parent_item in @parent_items %>
+	<div class="module_item">
+		<div class="item_name">
+			<%= link_to parent_item.email, :action => 'edit', :id => parent_item.id %>
+		</div>
+		<div class="module_item_actions">
+			<p>
+				<%= link_to :action => "edit", :id => parent_item.id do %>
+					<span class="glyphicon glyphicon-edit"></span>
+				<% end %>
+				<%= link_to(url_for(:action => 'destroy', :parent_item_id => parent_item.id), :format => :js, :remote => true, data: { confirm: 'Are you sure?' }) do %>
+					<span class="glyphicon glyphicon-trash"></span>
+				<% end %>
+			</p>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+<% end %>

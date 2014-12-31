@@ -1,5 +1,16 @@
 CmsAdmin::Application.routes.draw do
 
+  namespace :admin do
+      resources :public_users do
+        collection do
+          get 'move_up'
+          get 'move_down'
+          get 'publish'
+          get 'destroy'
+          get 'remove'
+        end
+      end
+    end
   devise_for :public_users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

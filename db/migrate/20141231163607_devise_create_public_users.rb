@@ -19,6 +19,11 @@ class DeviseCreatePublicUsers < ActiveRecord::Migration
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+      t.boolean :published, :boolean, :default => false
+      t.integer :position
+      t.timestamp :created_on
+      t.timestamp :updated_on
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

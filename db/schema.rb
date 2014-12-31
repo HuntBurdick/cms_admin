@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20141231163607) do
   enable_extension "plpgsql"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",           limit: 255, null: false
-    t.integer  "sluggable_id",               null: false
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50
-    t.string   "scope",          limit: 255
+    t.string   "scope"
     t.datetime "created_at"
   end
 
@@ -30,17 +30,17 @@ ActiveRecord::Schema.define(version: 20141231163607) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "slug",                       limit: 255
-    t.string   "name",                       limit: 255
+    t.string   "slug"
+    t.string   "name"
     t.text     "body"
-    t.string   "image_file_name",            limit: 255
-    t.string   "image_content_type",         limit: 255
+    t.string   "image_file_name"
+    t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "published",                              default: true
-    t.boolean  "boolean",                                default: true
-    t.boolean  "show_in_menu",                           default: true
-    t.boolean  "only_for_logged_in_members",             default: false
+    t.boolean  "published",                  default: true
+    t.boolean  "boolean",                    default: true
+    t.boolean  "show_in_menu",               default: true
+    t.boolean  "only_for_logged_in_members", default: false
     t.integer  "position"
     t.datetime "created_on"
     t.datetime "updated_on"
@@ -49,17 +49,17 @@ ActiveRecord::Schema.define(version: 20141231163607) do
   add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.string   "slug",               limit: 255
+    t.string   "title"
+    t.string   "slug"
     t.text     "body"
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
+    t.string   "image_file_name"
+    t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "page_id"
     t.boolean  "published"
     t.integer  "position"
-    t.string   "meta_description",   limit: 255
+    t.string   "meta_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,16 +67,21 @@ ActiveRecord::Schema.define(version: 20141231163607) do
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
 
   create_table "public_users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.boolean  "published",              default: false
+    t.boolean  "boolean",                default: false
+    t.integer  "position"
+    t.datetime "created_on"
+    t.datetime "updated_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,17 +90,17 @@ ActiveRecord::Schema.define(version: 20141231163607) do
   add_index "public_users", ["reset_password_token"], name: "index_public_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.boolean  "is_admin",                           default: false
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.boolean  "is_admin",               default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

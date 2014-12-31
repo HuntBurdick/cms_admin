@@ -1,0 +1,19 @@
+<div class="module_list">
+	<div class="module_actions">
+		<h2>Public Users</h2>
+		<div class="action_items">
+			<%= link_to :action => 'new' do %>
+				<p><span class="glyphicon glyphicon-plus"></span></p>
+			<% end %>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="module_partial">
+		<% if @parent_items.blank? %>
+			<h3>No <%= controller.module_model::MODULE_TITLE %> have been added yet.</h3>
+		<% else %>
+			<%= render :partial => 'list' %>
+		<% end %>
+	</div>
+	<%= will_paginate @parent_items, renderer: BootstrapPagination::Rails %>
+</div>
