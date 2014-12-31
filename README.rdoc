@@ -88,11 +88,12 @@ To show a custom layout for a post create a file in "posts/show" called "_show_e
 == Public Users
 
 Users can sign up and sing into the front end of a cms_admin website by default.
-
 There are Devise routes available at:
 
 /public_users/sign_up
+
 /public_users/sign_in
+
 /public_users/password/new
 
 
