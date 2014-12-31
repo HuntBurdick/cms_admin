@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :menu_pages
 
+  layout :layout_by_resource
+
   def menu_pages
   	if user_signed_in?
 			@pages = Page.where(:show_in_menu => true, :published => true).order('position ASC')
@@ -24,5 +26,15 @@ class ApplicationController < ActionController::Base
 	def label_for_string(string)
 		string.gsub("admin/", "").gsub("_", " ").titleize
 	end
+
+	protected
+
+    def layout_by_resource
+      if devise_controller? && resource_name == :user
+        "admin"
+      else
+        "application"
+      end
+    end
 
 end
