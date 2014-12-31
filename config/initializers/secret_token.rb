@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CmsAdmin2::Application.config.secret_key_base = 'b733afb9aac5e2f22cb1b47da71e4eb145f42fe6303006c41389d938535553109d706b5feb908bf2de02346ba49facd8081954c8850a96f22a156754d4e2dfae'
+CmsAdmin::Application.config.secret_key_base = 'b733afb9aac5e2f22cb1b47da71e4eb145f42fe6303006c41389d938535553109d706b5feb908bf2de02346ba49facd8081954c8850a96f22a156754d4e2dfae'

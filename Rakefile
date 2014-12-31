@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CmsAdmin2::Application.load_tasks
+CmsAdmin::Application.load_tasks

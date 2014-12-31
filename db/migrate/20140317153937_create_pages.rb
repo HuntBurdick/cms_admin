@@ -12,7 +12,7 @@ class CreatePages < ActiveRecord::Migration
       t.timestamp :created_on
       t.timestamp :updated_on
     end
-    Page.create :name => 'Home', :body => 'Welcome to CMS_Admin2', :position => 1
+    Page.create :name => 'Home', :body => 'Welcome to cms_admin', :position => 1
     add_index :pages, :slug, unique: true
   end
 end
