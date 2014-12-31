@@ -1,7 +1,7 @@
 = cms_admin
 ==========
 
-Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts and users.
+Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 
 -------------------
 
@@ -99,7 +99,16 @@ There are Devise routes available at:
 
 These views are editable at in the public users view folder.
 
+Front end registration can be locked down by updating the Devise abilities in the PublicUser model.
+
 -------------------
+
+== Images
+
+Each Page and Post has one main image and unlimited secondary images. The main image will show up at the top of the page/post and the secondary images will show up below the page/post in a thumbnail grid. Each image can be opened in a lightbox.
+
+
+------------------
 
 == Some Things To Watch Out For
 
