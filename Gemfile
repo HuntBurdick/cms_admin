@@ -5,7 +5,6 @@ gem 'pg'
 
 # Authentication and permissions
 gem 'devise'
-gem 'cancan'
 gem 'acts_as_list'
 gem 'RedCloth'
 gem 'textile_editor_helper', '0.1.2'

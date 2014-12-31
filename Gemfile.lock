@@ -46,7 +46,6 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
-    cancan (1.6.10)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.5)
@@ -180,7 +179,6 @@ DEPENDENCIES
   acts_as_list
   bootstrap-datepicker-rails (~> 1.0.0.7)
   bootstrap-sass (~> 3.2.0)
-  cancan
   coffee-rails (~> 4.0.0)
   devise
   friendly_id
