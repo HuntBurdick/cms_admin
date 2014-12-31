@@ -105,10 +105,13 @@ These views are editable at in the public users view folder.
 
 Admin/front-end interaction is tied to the page title. I typically lock down page create/destroy and title edit and only allow admin users to edit the body content for pages. If you do not have special layouts tied to your pages, then this is not a concern.
 
+
+Turbolinks is enabled for the both the front and back end. jQueryTurbolinks is also included to help maintain compatibility with a wider range of scripts. There may be some cases where disabling turbolinks is required.
+
 -------------------
 
 
-Main Dependencies: Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id.
+Main Dependencies: Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id, Turbolinks and jQueryTurbolinks.
 
 The MIT License (MIT)
 
