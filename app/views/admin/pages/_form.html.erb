@@ -1,8 +1,44 @@
-<%= form.input :name %>
+<div class="row">
+	<div class="col-sm-6">
+		<%= form.input :name %>
+	</div>
+</div>
 <%= form.input :body, as: :textile_editor %>
-<%= form.input :image %>
+
+<hr />
+<div class="row">
+	<div class="col-sm-6">
+		<h3>Main Image</h3>
+		<% unless @page.image.blank? %>
+			<div class="image_preview">
+				<%= image_tag(@page.image.url(:thumb)) %>
+			</div>
+		<% end %>
+		<%= form.input :image %>
+	</div>
+</div>
+
+<hr />
+
+<h3>Images</h3>
+<div class="row images">
+	<%= form.simple_fields_for :images do |image| %>
+		<%= render 'image_fields', :f => image %>
+	<% end %>
+
+
+	<div class="links">
+		<%= link_to_add_association form, :images do %>
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> add image
+		<% end %>
+	</div>
+</div>
+<hr />
+
 <div class="container">
 	<%= form.input :published %>
 	<%= form.input :show_in_menu %>
 	<%= form.input :only_for_logged_in_members %>
 </div>
+
+<hr />

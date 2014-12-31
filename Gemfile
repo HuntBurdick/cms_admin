@@ -15,7 +15,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'will_paginate-bootstrap'
 # gem 'autoprefixer-rails'
 
-
+gem "cocoon"
 gem 'friendly_id'
 
 # Forms

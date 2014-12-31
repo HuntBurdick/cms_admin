@@ -20,24 +20,50 @@
 			<%= yield :page_top %>
 		</div>
 
-		<div class="media">
+		<div class="page">
 			<% unless @page.image.blank? %>
-			  <a class="pull-left" data-toggle="modal" data-target="#imageModal_<%= @page.friendly_id %>" href="#">
-			    <%= image_tag @page.image.url(:medium), :class => 'media-object' %>
+			  <a class="thumbnail" data-toggle="modal" data-target="#imageModal_<%= @page.friendly_id %>" href="#">
+			    <%= image_tag @page.image.url(:normal), :class => 'media-object' %>
 			  </a>
+
+			  <!-- Image Modal -->
 			  <div class="modal fade" id="imageModal_<%= @page.friendly_id %>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 			    <div class="modal-dialog">
 		        <div class="modal-content">
 		        	<div class="modal-body">
 		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        		<%= image_tag @page.image.url(:large), :class => 'media-object' %>
+		        		<%= image_tag @page.image.url(:normal), :class => 'media-object' %>
 		        	</div>
 		        </div>
 			    </div>
 		   	</div>
 			<% end %>
-		  <div class="media-body">
+		  <div class="page_body">
 		    <%= redcloth(@page.body) %>
+
+		    <% unless @page.images.blank? %>
+		    	<div class="row">
+			     	<% for image in @page.images %>
+			     		<div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+			     			<a class="thumbnail" data-toggle="modal" data-target="#imageModal_<%= image.id %>" href="#">
+					     		<%= image_tag image.photo.url(:thumb) %>
+					     	</a>
+
+				     		<!-- Image Modal -->
+							  <div class="modal fade" id="imageModal_<%= image.id %>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+							    <div class="modal-dialog">
+						        <div class="modal-content">
+						        	<div class="modal-body">
+						        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						        		<%= image_tag image.photo.url(:normal), :class => 'media-object' %>
+						        	</div>
+						        </div>
+							    </div>
+						   	</div>
+				     	</div>
+			     	<% end %>
+			    </div>
+		    <% end %>
 		  </div>
 		</div>
 

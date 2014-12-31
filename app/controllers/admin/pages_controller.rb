@@ -98,7 +98,18 @@ module Admin
       end
 
       def page_params
-        params.require(:page).permit(:show_in_menu, :only_for_logged_in_members, :image, :name, :body, :published, :position, :created_on, :updated_on)
+        params.require(:page).permit(
+          :show_in_menu, 
+          :only_for_logged_in_members, 
+          :image, 
+          :name, 
+          :body, 
+          :published, 
+          :position, 
+          :created_on, 
+          :updated_on,
+          :images_attributes => [:id, :photo, :headline, :caption, :done, :_destroy]
+        )
       end
     
   end

@@ -112,7 +112,7 @@ Turbolinks is enabled for the both the front and back end. jQueryTurbolinks is a
 
 == Main Dependencies
 
-Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id, Turbolinks and jQueryTurbolinks.
+Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id, Cocoon, Turbolinks and jQueryTurbolinks.
 
 --------------------
 

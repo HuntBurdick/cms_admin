@@ -1,0 +1,14 @@
+<div class="nested-fields col-sm-6">
+	<% unless f.object.photo.blank? %>
+		<div class="image_preview">
+			<%= image_tag(f.object.photo.url(:thumb)) %>
+		</div>
+	<% end %>
+
+  <%= f.input :photo %>
+  <div class="text-right">
+	  <%= link_to_remove_association f do %>
+	  	<span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Remove Image
+	 	<% end %>
+	</div>
+</div>

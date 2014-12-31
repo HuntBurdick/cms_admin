@@ -1,0 +1,47 @@
+<div class="post">
+  <% unless post.image.blank? %>
+    <a data-toggle="modal" data-target="#imageModal_<%= post.id %>" href="#">
+      <div class="post_image">
+        <%= image_tag post.image.url(:normal), :class => 'media-object' %>
+      </div>
+    </a>
+    <div class="modal fade" id="imageModal_<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <%= image_tag post.image.url(:normal), :class => 'media-object' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="post_body">
+    <%= redcloth(post.body) %>
+  </div>
+
+  <% unless post.images.blank? %>
+    <div class="row">
+      <% for image in post.images %>
+        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+          <a class="thumbnail" data-toggle="modal" data-target="#imageModal_<%= image.id %>" href="#">
+            <%= image_tag image.photo.url(:thumb) %>
+          </a>
+
+          <!-- Image Modal -->
+          <div class="modal fade" id="imageModal_<%= image.id %>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <%= image_tag image.photo.url(:normal), :class => 'media-object' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

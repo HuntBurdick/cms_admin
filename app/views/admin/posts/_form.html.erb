@@ -5,4 +5,34 @@
 <% end %>
 <%= form.input :title %>
 <%= form.input :body, as: :textile_editor %>
-<%= form.input :image %>
+
+<hr />
+
+<div class="row">
+	<div class="col-sm-6">
+		<h3>Main Image</h3>
+		<% unless @post.image.blank? %>
+			<div class="image_preview">
+				<%= image_tag(@post.image.url(:thumb)) %>
+			</div>
+		<% end %>
+		<%= form.input :image %>
+	</div>
+</div>
+
+<hr />
+
+<h3>Images</h3>
+<div class="row images">
+	<%= form.simple_fields_for :images do |image| %>
+		<%= render 'image_fields', :f => image %>
+	<% end %>
+
+
+	<div class="links">
+		<%= link_to_add_association form, :images do %>
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> add image
+		<% end %>
+	</div>
+</div>
+<hr />

@@ -3,25 +3,4 @@
 </div>
 
 
-<div class="media post_show">
-  <div class="media-body">
-    <%= redcloth(@post.body) %>
-  </div>
-  <% unless @post.image.blank? %>
-    <a data-toggle="modal" data-target="#imageModal_<%= @post.id %>" href="#">
-      <div class="post_image">
-        <%= image_tag @post.image.url(:medium), :class => 'media-object' %>
-      </div>
-    </a>
-    <div class="modal fade" id="imageModal_<%= @post.id %>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <%= image_tag @post.image.url(:large), :class => 'media-object' %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render :partial => '/modules/post', :object => @post %>

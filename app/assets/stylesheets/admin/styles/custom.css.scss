@@ -148,3 +148,31 @@ Login Form
       color:#777;
   }
 }
+
+.clearboth {
+	clear:both;
+}
+
+
+.image_preview {
+	width:100%;
+	max-width: 150px;
+	padding:4px;
+	border:1px solid #ddd;
+	img {
+		width: 100%;
+	}
+}
+
+.images {
+	position: relative;
+	padding-bottom: 40px;
+	.links {
+		display: block;
+		width: 100%;
+		float:none;
+		position: absolute;
+		bottom:0px;
+		left:20px;
+	}
+}

@@ -16,7 +16,10 @@ module Admin
 
     def edit
       @post = Post.find(params[:id])
-      @page = Page.find(params[:page_id])
+
+      unless params[:page_id].blank?
+        @page = Page.find(params[:page_id])
+      end
     end
     
 
@@ -101,7 +104,19 @@ module Admin
       end
 
       def post_params
-        params.require(:post).permit( :price, :quantity, :title, :body, :page_id, :published, :meta_description, :image, :created_on, :updated_on)
+        params.require(:post).permit( 
+          :price, 
+          :quantity, 
+          :title, 
+          :body, 
+          :page_id, 
+          :published, 
+          :meta_description, 
+          :image, 
+          :created_on, 
+          :updated_on,
+          :images_attributes => [:id, :photo, :headline, :caption, :done, :_destroy]
+        )
       end
 
   end
