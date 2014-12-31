@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require turbolinks
+//= require ./modernizr-2.6.2-respond-1.1.0.min.js
 //= require textile-editor
 //= require bootstrap-sprockets
-//= require_tree .
+//= require ./main.js
