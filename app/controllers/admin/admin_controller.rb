@@ -15,10 +15,10 @@ module Admin
   	private
 
   		def check_if_admin
-				if user_signed_in?
-					flash[:alert] = "You are not an admin."
-					redirect_to '/'
-				end
+				# if user_signed_in?
+				# 	flash[:alert] = "You are not an admin."
+				# 	redirect_to '/'
+				# end
   		end
 
   end
