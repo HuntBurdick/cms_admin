@@ -18,7 +18,7 @@
         <li>
           <% if public_user_signed_in? %>
             <%= link_to(destroy_public_user_session_path, :method => :delete) do %>
-              <span class="glyphicon glyphicon-remove-circle"></span>
+              <span class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></span>
             <% end %>
           <% end %>
         </li>

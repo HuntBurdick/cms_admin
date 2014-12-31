@@ -57,9 +57,7 @@ module Admin
     def destroy
       @parent_item = PublicUser.find(params[:parent_item_id])
 
-      unless @parent_item.id == 1
-        @parent_item.destroy
-      end
+      @parent_item.destroy
 
       respond_to do |format|
         format.js { list_refresh }
@@ -70,7 +68,7 @@ module Admin
 
       def list_refresh
         @parent_items = PublicUser.paginate(:page => params[:page], :per_page => 20)
-        return render(:file => 'admin/parent_items/list_refresh.js.erb')
+        return render(:file => 'admin/public_users/list_refresh.js.erb')
       end
 
       # Use callbacks to share common setup or constraints between actions.

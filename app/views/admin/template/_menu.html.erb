@@ -28,7 +28,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
              <%= link_to(destroy_user_session_path, :method => :delete) do %>
-              <span class="glyphicon glyphicon-remove-circle"></span>
+              <span class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></span>
             <% end %>
           </li>
         </ul>
