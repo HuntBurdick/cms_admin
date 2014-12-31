@@ -15,13 +15,28 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
-  def after_sign_in_path_for(resource)
+  # Direct login and logout actions for admin users.
+  def after_sign_in_path_for(user)
+    flash[:notice] = "Welcome."
 	  '/admin'
 	end
 
-	def after_sign_out_path_for(resource)
+	def after_sign_out_path_for(user)
+    flash[:notice] = "Signed out."
 		'/admin'
 	end
+
+
+  # Direct login and logout actions for public users.
+  def after_sign_in_path_for(public_user)
+    flash[:notice] = "Welcome."
+    '/'
+  end
+
+  def after_sign_out_path_for(public_user)
+    flash[:notice] = "Signed out."
+    '/'
+  end
 
 	def label_for_string(string)
 		string.gsub("admin/", "").gsub("_", " ").titleize

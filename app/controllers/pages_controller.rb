@@ -6,6 +6,9 @@ class PagesController < ApplicationController
 
   def show
     set_page
+
+    authorize_page(@page)
+
     @page_title       = label_for_string(@page.name)
     @page_description = @page.body.blank? ? '' : @page.body.truncate(60)
 
@@ -26,6 +29,13 @@ class PagesController < ApplicationController
     def home
       set_page
       # Resources for page modules can be set here.
+    end
+
+    def authorize_page(page)
+      if page.only_for_logged_in_members == true && !public_user_signed_in?
+        flash[:alert] = "You must be logged in to view this page."
+        redirect_to '/'
+      end
     end
 
 end

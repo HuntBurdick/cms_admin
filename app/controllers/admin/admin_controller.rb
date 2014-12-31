@@ -15,7 +15,7 @@ module Admin
   	private
 
   		def check_if_admin
-				if current_user.is_admin == false || current_user.is_admin.blank?
+				if user_signed_in?
 					flash[:alert] = "You are not an admin."
 					redirect_to '/'
 				end
