@@ -24,24 +24,24 @@ CMS_Admin is a simple approach to content management. The system revolves around
 
 It's best to use cms_admin with new projects.
 
-  git clone https://github.com/websitescenes/cms_admin.git project_name
+    git clone https://github.com/websitescenes/cms_admin.git project_name
 
 There is no config/database.yml so you will have to add one. PG is loaded by default, but you may prefer another database type. Here is an example of a PG database.yml:
 
-  development:
-  adapter: postgresql
-  encoding: utf8
-  database: cms_admin
-  pool: 5
-  username: postgres
-  password: 
-  port: 5432 
-  host: localhost
+    development:
+    adapter: postgresql
+    encoding: utf8
+    database: cms_admin
+    pool: 5
+    username: postgres
+    password: 
+    port: 5432 
+    host: localhost
 
 
 ### Admin Generator
 
-  rails generate module things
+    rails generate module things
 
 
 this will create a backend CRUD interface for model Thing.
@@ -51,7 +51,7 @@ this will create a backend CRUD interface for model Thing.
 
 For a custom post form create the partial '_form_for_page_name.html.erb' in the view/admin/posts folder.
 
-  _form_for_page_name.html.erb
+    _form_for_page_name.html.erb
 
 
 ### Custom Page Modules
@@ -59,15 +59,15 @@ For a custom post form create the partial '_form_for_page_name.html.erb' in the 
 
 There are five pre-defined module positions for custom content within each page.
 
-  page_top
+    page_top
 
-  page_bottom
+    page_bottom
 
-  after_posts
+    after_posts
 
-  side_left
+    side_left
 
-  side_right
+    side_right
 
 To utilize these positions, create a partial file in the 'page_modules' view folder with the same name as the page. An example is included for the home page.
 
@@ -76,26 +76,26 @@ To utilize these positions, create a partial file in the 'page_modules' view fol
 
 If custom objects are needed for your page module, then create a method in the pages controller under private with the same name as the page. When the corresponding page is loaded, so will the custom objects within this method. The home page structure is laid out as an example.
 
-  private
-  
-    def home
-      set_page
-      # Resources for page modules can be set here.
-    end
+    private
+    
+      def home
+        set_page
+        # Resources for page modules can be set here.
+      end
 
 
 ### Custom Post List for Page
 
 To customize the post list layout for a page, create a file in the "posts/list" folder with the format "_list_for_example.html.erb", where "example" would be the page name.
 
-  _list_for_example.html.erb
+    _list_for_example.html.erb
 
 
 ### Custom Post Show Layout for Page
 
 To show a custom layout for a post create a file in "posts/show" called "_show_example.html.erb", where "example" is the name of the parent page.
   
-  _show_example.html.erb
+    _show_example.html.erb
   
 
 ### Public Users
@@ -103,11 +103,11 @@ To show a custom layout for a post create a file in "posts/show" called "_show_e
 Users can sign up and sing into the front end of a cms_admin website by default.
 There are Devise routes available at:
 
-  /public_users/sign_up
+    /public_users/sign_up
 
-  /public_users/sign_in
+    /public_users/sign_in
 
-  /public_users/password/new
+    /public_users/password/new
 
 
 These views are editable at in the public users view folder.
