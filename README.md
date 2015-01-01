@@ -9,9 +9,9 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 ### Default Credentials
 
 
-  <User: admin@example.com
+  <code>User: admin@example.com
 
-  Pass: password>
+  Pass: password</code>
 
 
 ### Introduction
