@@ -23,7 +23,7 @@ CMS_Admin is a simple approach to content management. The system revolves around
 
 It's best to use cms_admin with new projects.
 
-git clone https://github.com/websitescenes/cms_admin.git project_name
+  git clone https://github.com/websitescenes/cms_admin.git project_name
 
 There is no config/database.yml so you will have to add one. PG is loaded by default, but you may prefer another database type. Here is an example of a PG database.yml:
 
@@ -110,11 +110,11 @@ To show a custom layout for a post create a file in "posts/show" called "_show_e
 Users can sign up and sing into the front end of a cms_admin website by default.
 There are Devise routes available at:
 
-/public_users/sign_up
+  /public_users/sign_up
 
-/public_users/sign_in
+  /public_users/sign_in
 
-/public_users/password/new
+  /public_users/password/new
 
 
 These views are editable at in the public users view folder.
