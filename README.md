@@ -1,8 +1,7 @@
-h3. cms_admin
+cms_admin
+==========
 
 <img src="http://placehold.it/350x150" />
-
-==========
 
 Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 
