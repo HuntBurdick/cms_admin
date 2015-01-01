@@ -9,9 +9,9 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 ### Default Credentials
 
 
-> User: admin@example.com
+  <User: admin@example.com
 
-> Pass: password
+  Pass: password>
 
 
 ### Introduction
@@ -24,32 +24,24 @@ CMS_Admin is a simple approach to content management. The system revolves around
 
 It's best to use cms_admin with new projects.
 
-> git clone https://github.com/websitescenes/cms_admin.git project_name
+  git clone https://github.com/websitescenes/cms_admin.git project_name
 
 There is no config/database.yml so you will have to add one. PG is loaded by default, but you may prefer another database type. Here is an example of a PG database.yml:
 
-> development:
-
-> adapter: postgresql
-
-> encoding: utf8
-
-> database: cms_admin
-
-> pool: 5
-
-> username: postgres
-
-> password: 
-
-> port: 5432 
-
-> host: localhost
+  development:
+  adapter: postgresql
+  encoding: utf8
+  database: cms_admin
+  pool: 5
+  username: postgres
+  password: 
+  port: 5432 
+  host: localhost
 
 
 ### Admin Generator
 
-> rails generate module things
+  rails generate module things
 
 
 this will create a backend CRUD interface for model Thing.
@@ -59,7 +51,7 @@ this will create a backend CRUD interface for model Thing.
 
 For a custom post form create the partial '_form_for_page_name.html.erb' in the view/admin/posts folder.
 
-> _form_for_page_name.html.erb
+  _form_for_page_name.html.erb
 
 
 ### Custom Page Modules
@@ -67,15 +59,15 @@ For a custom post form create the partial '_form_for_page_name.html.erb' in the 
 
 There are five pre-defined module positions for custom content within each page.
 
-> page_top
+  page_top
 
-> page_bottom
+  page_bottom
 
-> after_posts
+  after_posts
 
-> side_left
+  side_left
 
-> side_right
+  side_right
 
 To utilize these positions, create a partial file in the 'page_modules' view folder with the same name as the page. An example is included for the home page.
 
@@ -84,12 +76,12 @@ To utilize these positions, create a partial file in the 'page_modules' view fol
 
 If custom objects are needed for your page module, then create a method in the pages controller under private with the same name as the page. When the corresponding page is loaded, so will the custom objects within this method. The home page structure is laid out as an example.
 
-> private
+  private
   
->   def home
->     set_page
->     # Resources for page modules can be set here.
->   end
+    def home
+      set_page
+      # Resources for page modules can be set here.
+    end
 
 
 ### Custom Post List for Page
