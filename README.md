@@ -1,4 +1,4 @@
-= cms_admin
+h3. cms_admin
 
 <img src="http://placehold.it/350x150" />
 
