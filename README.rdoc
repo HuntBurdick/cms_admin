@@ -19,6 +19,26 @@ CMS_Admin is a simple approach to content management. The system revolves around
 
 --------------------
 
+== Setup
+
+It's best to use cms_admin with new projects.
+
+git clone https://github.com/websitescenes/cms_admin.git project_name
+
+There is no config/database.yml so you will have to add one. PG is loaded by default, but you may prefer another database type. Here is an example of a PG database.yml:
+
+  development:
+  adapter: postgresql
+  encoding: utf8
+  database: cms_admin
+  pool: 5
+  username: postgres
+  password: freeride
+  port: 5432 
+  host: localhost
+
+--------------------
+
 == Admin Generator
 
   rails generate module things
