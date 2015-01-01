@@ -1,7 +1,7 @@
 cms_admin
 ==========
 
-<img src="http://placehold.it/350x150" />
+<img src="https://github.com/websitescenes/cms_admin/blob/master/app/assets/images/cms_admin.png" />
 
 Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 
