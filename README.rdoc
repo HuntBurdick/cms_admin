@@ -33,7 +33,7 @@ There is no config/database.yml so you will have to add one. PG is loaded by def
   database: cms_admin
   pool: 5
   username: postgres
-  password: freeride
+  password: 
   port: 5432 
   host: localhost
 
