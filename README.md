@@ -136,4 +136,4 @@ Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Frien
 
 ### License
 
-Ruby on Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+cms_admin is released under the [MIT License](http://www.opensource.org/licenses/MIT).
