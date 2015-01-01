@@ -134,6 +134,17 @@ Turbolinks is enabled for the both the front and back end. jQueryTurbolinks is a
 Twitter Bootstrap, Devise, RedCloth, Simple Form, Acts as List, Paperclip, Friendly Id, Cocoon, Turbolinks and jQueryTurbolinks.
 
 
+### Support
+
+cms_admin is actively utilized for all my side projects outside of work. I will continue to make it better and squash bugs at a steady rate. If you require assistance or have found a bug, open a Github issue.
+
+### Contribute
+
+I am open to feedback, suggestions and contributions are gladly welcomed. Pull requests will be reviewed and incorporated promptly.
+
+
 ### License
 
 cms_admin is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+
+
