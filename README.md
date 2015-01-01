@@ -10,6 +10,7 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 
 
 > User: admin@example.com
+>
 > Pass: password
 
 
