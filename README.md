@@ -7,6 +7,8 @@ Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
 
 ### Default Credentials
 
+CMS path is /admin
+
 
     User: admin@example.com
 
