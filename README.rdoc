@@ -1,4 +1,7 @@
 = cms_admin
+
+<img src="http://placehold.it/350x150" />
+
 ==========
 
 Rails 4 / Twitter Bootstrap 3 CMS. Pages, posts, images, users and public users.
@@ -135,7 +138,7 @@ Each Page and Post has one main image and unlimited secondary images. The main i
 Admin/front-end interaction is tied to the page title. I typically lock down page create/destroy and title edit and only allow admin users to edit the body content for pages. If you do not have special layouts tied to your pages, then this is not a concern.
 
 
-Turbolinks is enabled for the both the front and back end. jQueryTurbolinks is also included to help maintain compatibility with a wider range of scripts. There may be some cases where disabling turbolinks is required.
+Turbolinks is enabled for the both the front and back end. jQueryTurbolinks is also included to help maintain compatibility with a wider range of scripts. There may be some cases where disabling turbolinks is required for your application structure.
 
 -------------------
 
