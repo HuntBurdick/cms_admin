@@ -5,19 +5,19 @@
 		</div>
 		<div class="module_item_actions">
 			<p>
-				<%= link_to(url_for(:action => 'publish', :parent_item_id => parent_item.id), :format => :js, :remote => true) do %>
+				<%= link_to(url_for(:action => 'publish', :parent_item_id => parent_item.id, :page => params[:page]), :format => :js, :remote => true) do %>
 					<span class="glyphicon glyphicon-ok <%= parent_item.published == true ? '' : 'dead' %>"></span>
 				<% end %>
 				<%= link_to :action => "edit", :id => parent_item.id do %>
 					<span class="glyphicon glyphicon-edit"></span>
 				<% end %>
-				<%= link_to(url_for(:action => 'destroy', :parent_item_id => parent_item.id), :format => :js, :remote => true, data: { confirm: 'Are you sure?' }) do %>
+				<%= link_to(url_for(:action => 'destroy', :parent_item_id => parent_item.id, :page => params[:page]), :format => :js, :remote => true, data: { confirm: 'Are you sure?' }) do %>
 					<span class="glyphicon glyphicon-trash"></span>
 				<% end %>
-				<%= link_to(url_for(:action => 'move_up', :parent_item_id => parent_item.id), :format => :js, :remote => true) do %>
+				<%= link_to(url_for(:action => 'move_up', :parent_item_id => parent_item.id, :page => params[:page]), :format => :js, :remote => true) do %>
 					<span class="glyphicon glyphicon-circle-arrow-up"></span>
 				<% end %>
-				<%= link_to(url_for(:action => 'move_down', :parent_item_id => parent_item.id), :format => :js, :remote => true) do %>					
+				<%= link_to(url_for(:action => 'move_down', :parent_item_id => parent_item.id, :page => params[:page]), :format => :js, :remote => true) do %>					
 					<span class="glyphicon glyphicon-circle-arrow-down"></span>
 				<% end %>
 			</p>

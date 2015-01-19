@@ -8,7 +8,7 @@
         <%= link_to :action => "edit", :id => user do %>
           <span class="glyphicon glyphicon-edit"></span>
         <% end %>
-        <%= link_to(url_for(:controller => 'admin/users', :action => 'destroy', :user_id => user.id), :format => :js, :remote => true, data: { confirm: 'Are you sure?' }) do %>
+        <%= link_to(url_for(:controller => 'admin/users', :action => 'destroy', :user_id => user.id, :page => params[:page]), :format => :js, :remote => true, data: { confirm: 'Are you sure?' }) do %>
           <span class="glyphicon glyphicon-trash"></span>
         <% end %>
       </p>
