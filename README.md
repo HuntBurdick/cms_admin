@@ -38,21 +38,41 @@ There is no config/database.yml so you will have to add one. PG is loaded by def
     password: 
     port: 5432 
     host: localhost
+    
+### Pages
+
+Pages are the main content areas/views. Each page has pre-defined module positions and attributes. Pages can be set as public or private and there are options to publish and show in menu.
 
 
-### Admin Generator
+### Posts
 
-    rails generate module things
-
-
-this will create a backend CRUD interface for model Thing.
+Posts belong to pages. Posts can be published, sorted and have many images.
 
 
-### Custom Post Form for page
+### Images
 
-For a custom post form create the partial '_form_for_page_name.html.erb' in the view/admin/posts folder.
+Each Page and Post has one main image and unlimited secondary images. The main image will show up at the top of the page/post and the secondary images will show up below the page/post in a thumbnail grid. Each image can be opened in a lightbox.
 
-    _form_for_page_name.html.erb
+### Public Users
+
+Users can sign up and log into the front end of a cms_admin website by default.
+There are Devise routes available at:
+
+    /public_users/sign_up
+
+    /public_users/sign_in
+
+    /public_users/password/new
+
+
+These views are editable at in the public users view folder.
+
+Front end registration can be locked down by updating the Devise abilities in the PublicUser model.
+
+
+## Admin Users
+
+The default login route for admin users is /admin. 
 
 
 ### Custom Page Modules
@@ -97,28 +117,24 @@ To customize the post list layout for a page, create a file in the "posts/list" 
 To show a custom layout for a post create a file in "posts/show" called "_show_example.html.erb", where "example" is the name of the parent page.
   
     _show_example.html.erb
-  
-
-### Public Users
-
-Users can sign up and sing into the front end of a cms_admin website by default.
-There are Devise routes available at:
-
-    /public_users/sign_up
-
-    /public_users/sign_in
-
-    /public_users/password/new
 
 
-These views are editable at in the public users view folder.
-
-Front end registration can be locked down by updating the Devise abilities in the PublicUser model.
 
 
-### Images
+### Admin Generator
 
-Each Page and Post has one main image and unlimited secondary images. The main image will show up at the top of the page/post and the secondary images will show up below the page/post in a thumbnail grid. Each image can be opened in a lightbox.
+    rails generate module things
+
+
+this will create a backend CRUD interface for model Thing.
+
+
+### Custom Post Form for page
+
+For a custom post form create the partial '_form_for_page_name.html.erb' in the view/admin/posts folder.
+
+    _form_for_page_name.html.erb
+
 
 
 ### Some Things To Watch Out For
