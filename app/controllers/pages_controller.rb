@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
    
     @posts = Post.where(:page_id => @page.id, :published => true).order("position ASC")
-    send(@page.name.parameterize) rescue nil
+    send(@page.slug.tr('-', '_')) rescue nil
     
   end
 
