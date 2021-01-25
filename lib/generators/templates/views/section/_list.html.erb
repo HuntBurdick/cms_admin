@@ -1,0 +1,15 @@
+<%% for section_item in @section_items %>
+  <div class="section_item">
+    <div class="item_name">
+      <%%= link_to section_item.name,
+        action: 'edit',
+        id: section_item.id %>
+    </div>
+    <div class="section_item_actions">
+      <%%= link_to action: "edit", id: section_item.id do %>
+        Edit
+      <%% end %>
+      <%%= link_to "Destroy", admin_<%= section_name.singularize %>_path(section_item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<%% end %>

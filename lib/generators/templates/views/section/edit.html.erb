@@ -1,0 +1,4 @@
+<%%= form_for @section_item, url: { action: "update" } do |form| %>
+  <%%= render partial: 'form', object: form %>
+  <%%= form.submit "Create" %>
+<%% end %>

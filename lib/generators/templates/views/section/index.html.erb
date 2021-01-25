@@ -1,0 +1,15 @@
+<h2>
+  <%%= <%= section_model_name %>::SECTION_TITLE %>
+</h2>
+
+<div>
+  <div class="section-action_items">
+    <%%= link_to action: 'new' do %>
+      New
+    <%% end %>
+  </div>
+
+  <div id="section-list">
+    <%%= render partial: 'list' %>
+  </div>
+</div>
