@@ -17,5 +17,9 @@ module CmsAdmin
       template "controllers/admin_controller.erb", "app/controllers/admin_controller.rb"
       template "views/admin/index.html.erb", "app/views/admin/index.html.erb"
     end
+
+    def add_admin_stylesheet
+      template "stylesheets/admin/cms_admin.scss", "app/assets/stylesheets/cms_admin.scss"
+    end
   end
 end
