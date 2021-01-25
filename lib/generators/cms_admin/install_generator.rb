@@ -19,7 +19,7 @@ module CmsAdmin
     end
 
     def add_admin_stylesheet
-      template "stylesheets/admin/cms_admin.scss", "app/assets/stylesheets/cms_admin.scss"
+      template "stylesheets/admin/cms_admin.css", "app/assets/stylesheets/cms_admin.css"
     end
   end
 end

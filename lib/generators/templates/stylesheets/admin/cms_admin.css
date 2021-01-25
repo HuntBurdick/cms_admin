@@ -1,0 +1,18 @@
+#cms-admin-wrapper {
+  display: table;
+  height: 100%;
+}
+
+#cms-admin-inner-wrapper {
+  display: table-row;
+}
+
+#cms-admin-sidebar {
+  display: table-cell;
+  width: 200px;
+  border-right: 1px solid #ddd;
+}
+
+#cms-admin-main {
+  display: table-cell;
+}
