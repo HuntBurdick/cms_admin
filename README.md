@@ -1,13 +1,17 @@
 # CmsAdmin
-Easily create admin sections.
+The composable Rails admin generator.
 
 ## Usage
 
-rails generate simple_form:install
-
-Example:
+Install CMS Admin:
 ```
-  rails generate cms_section Things
+  rails g cms_admin:install
+```
+
+
+Create Admin Section:
+```
+  rails g cms_admin:section Things
 ```
 
 ## Installation
@@ -28,7 +32,7 @@ $ gem install cms_admin
 ```
 
 ## Contributing
-Contribution directions go here.
+Feel free to open a PR.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
