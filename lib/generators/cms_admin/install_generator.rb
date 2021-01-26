@@ -21,5 +21,22 @@ module CmsAdmin
     def add_admin_stylesheet
       template "stylesheets/admin/cms_admin.css", "app/assets/stylesheets/cms_admin.css"
     end
+
+    def add_javascript_pack
+      # rake "webpacker:install"
+      rake "yarn:install"
+
+      template "javascript/admin/cms_admin.js", "app/javascript/packs/cms_admin.js"
+
+      append_to_file "config/initializers/assets.rb" do <<-'RUBY'
+        Rails.application.config.assets.precompile += %w( cms_admin.js )
+      RUBY
+      end
+
+      inject_into_file "app/views/layouts/application.html.erb", before: "</head>\n" do <<-'RUBY'
+        <%= javascript_include_tag 'cms_admin' %>
+      RUBY
+      end
+    end
   end
 end
