@@ -13,7 +13,7 @@
     <div id="cms-admin-sidebar">
       <ul>
         <%% @cms_sections.each do |section| %>
-          <li><%%= link_to section.generated_model_name, section.generated_controller_name %></li>
+          <li><%%= link_to section.generated_model_name, "admin/#{section.display_name}" %></li>
         <%% end %>
       </ul>
     </div>

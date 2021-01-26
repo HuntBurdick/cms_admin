@@ -36,7 +36,10 @@ module CmsAdmin
       template "views/section/index.html.erb", "app/views/admin/#{section_name}/index.html.erb"
       template "views/section/new.html.erb", "app/views/admin/#{section_name}/new.html.erb"
 
-      CmsSection.create(generated_model_name: section_model_name, generated_controller_name: section_controller_name)
+      CmsSection.create(
+        display_name: human_title,
+        generated_model_name: section_model_name,
+        generated_controller_name: file_name)
     end
 
     private
