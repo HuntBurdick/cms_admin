@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
   def index
+    @cms_sections = CmsSection.where(show_in_admin_nav: true).order(model_name: :asc)
   end
 end

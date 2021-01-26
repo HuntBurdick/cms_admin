@@ -22,22 +22,29 @@ module CmsAdmin
       template "stylesheets/admin/cms_admin.css", "app/assets/stylesheets/cms_admin.css"
     end
 
+    # Add Migrations
+    create_file "db/migrate/#{Time.now.year}#{Time.now.to_i}_create_cms_sections.rb", <<-FILE
+      class CreateCmsSections < ActiveRecord::Migration[6.0]
+        def change
+          create_table :cms_sections do |t|
+            t.string :model_name
+            t.boolean :show_in_admin_nav, default: true
+            t.text :description
+            t.timestamps null: false
+          end
+        end
+      end
+    FILE
+
+    # Add Model
+    template "models/cms_sections.erb", "app/models/cms_section.rb"
+
     # WIP: Not sure best way to include js yet..
-    # def add_javascript_pack
-    #   rake "webpacker:install"
-    #   rake "yarn:install"
-
-    #   template "javascript/admin/cms_admin.js", "app/javascript/packs/cms_admin.js"
-
-    #   append_to_file "config/initializers/assets.rb" do <<-'RUBY'
-    #     Rails.application.config.assets.precompile += %w( cms_admin.js )
-    #   RUBY
-    #   end
-
-    #   inject_into_file "app/views/layouts/application.html.erb", before: "</head>\n" do <<-'RUBY'
-    #     <%= javascript_pack_tag 'cms_admin' %>
-    #   RUBY
-    #   end
-    # end
+    def add_javascript_pack
+      inject_into_file "app/views/layouts/application.html.erb", before: "</head>\n" do <<-'RUBY'
+        <%= yield :cms_admin_javascript %>
+      RUBY
+      end
+    end
   end
 end

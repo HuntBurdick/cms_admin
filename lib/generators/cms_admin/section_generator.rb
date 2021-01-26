@@ -35,6 +35,8 @@ module CmsAdmin
       template "views/section/edit.html.erb", "app/views/admin/#{section_name}/edit.html.erb"
       template "views/section/index.html.erb", "app/views/admin/#{section_name}/index.html.erb"
       template "views/section/new.html.erb", "app/views/admin/#{section_name}/new.html.erb"
+
+      CmsSection.create(model_name: section_model_name)
     end
 
     private

@@ -1,9 +1,21 @@
 <%%= stylesheet_link_tag :cms_admin %>
 
+<!-- TODO: Move JS to NPM package. -->
+<!-- TODO: Make Turbolinks aware to avoid double render and memory leaks. -->
+<%%= content_for :cms_admin_javascript do %>
+  <script>
+    // alert("included!!");
+  </script>
+<%% end %>
+
 <div id="cms-admin-wrapper">
   <div id="cms-admin-inner-wrapper">
     <div id="cms-admin-sidebar">
-      Menu
+      <ul>
+        <%= @cms_sections.each do |section| %>
+          <li><%= section.model_name %></li>
+        <% end %>
+      </ul>
     </div>
     <div id="cms-admin-main">
       <h1>Admin</h1>

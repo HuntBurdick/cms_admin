@@ -1,6 +1,5 @@
 class <%= section_model_name %> < ActiveRecord::Base
   validates :name, presence: true
 
-  SHOW_IN_ADMIN_NAV = true
   SECTION_TITLE = '<%= "#{human_title}" %>'
 end
