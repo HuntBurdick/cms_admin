@@ -28,7 +28,8 @@ module CmsAdmin
         class CreateCmsSections < ActiveRecord::Migration[6.0]
           def change
             create_table :cms_sections do |t|
-              t.string :model_name
+              t.string :generated_model_name
+              t.string :generated_controller_name
               t.boolean :show_in_admin_nav, default: true
               t.text :description
               t.timestamps null: false
