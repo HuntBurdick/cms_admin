@@ -3,7 +3,8 @@ module Admin
     before_action :set_section_item, only: [:edit, :update, :destroy]
 
     def index
-      @display_name = CmsSection.where(generated_model_name: "<%= section_model_name %>").first
+      section = CmsSection.where(generated_model_name: "<%= section_model_name %>").first
+      @display_name = section ? section.display_name : "<%= human_title %>"
       @section_items = <%= section_model_name %>.all
     end
 

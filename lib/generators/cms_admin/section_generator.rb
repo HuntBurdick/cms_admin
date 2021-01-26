@@ -39,7 +39,7 @@ module CmsAdmin
       CmsSection.create(
         display_name: human_title,
         generated_model_name: section_model_name,
-        generated_controller_name: file_name)
+        generated_controller_name: section_name)
     end
 
     private
