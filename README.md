@@ -1,5 +1,5 @@
-# CmsAdmin
-The composable Rails admin generator.
+# WIP: CmsAdmin
+The composable Rails admin generator. This is a work in progress, use at own risk..
 
 ## Usage
 
@@ -8,6 +8,9 @@ Install CMS Admin:
   rails g cms_admin:install
 ```
 
+```
+  rake db:migrate
+```
 
 Create Admin Section:
 ```
